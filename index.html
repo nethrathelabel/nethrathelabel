@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nethra The Label - Kids Fashion</title>
+<style>
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background: #F7F7DE;
+  font-family: 'Quicksand', Arial, sans-serif;
+  color: #623C22;
+}
+header {
+  background: #fffbe6;
+  box-shadow: 0 8px 24px rgba(98,60,34,0.05);
+  text-align: center;
+  padding: 24px 0 10px 0;
+}
+.logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-size: 2.5rem;
+  color: #623C22;
+  letter-spacing: 2px;
+}
+.subtitle {
+  color: #81a488;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Product Grid */
+main {
+  padding: 32px 20px;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
+.product-section {
+  background: #fffbe6;
+  border-radius: 24px;
+  box-shadow: 0 4px 16px rgba(98,60,34,0.06);
+  padding: 24px 15px 32px 15px;
+  width: 320px;
+  text-align: center;
+  transition: transform .2s, box-shadow .2s;
+}
+.product-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 44px rgba(129,164,136,0.21);
+}
+.dress-photo {
+  width: 225px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 6px solid #f8e56a;
+  box-shadow: 0 2px 16px rgba(98,60,34,0.09);
+  cursor: pointer;
+  transition: transform .2s;
+}
+.dress-photo:hover {
+  transform: scale(1.05);
+}
+.desc {
+  font-size: 1.07rem;
+  margin-top: 12px;
+  color: #4e3222;
+}
+
+/* Buttons */
+.buy-btn, .close-btn {
+  background: linear-gradient(90deg,#f8e56a,#81a488);
+  color: #623C22;
+  border: none;
+  border-radius: 40px;
+  padding: 12px 28px;
+  font-size: 1.09rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(98,60,34,0.13);
+  transition: transform .18s, box-shadow .18s, background .3s;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+}
+.buy-btn:hover, .close-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 36px rgba(129,164,136,0.18);
+  background: linear-gradient(90deg,#81a488,#f8e56a);
+}
+
+/* Popup Styles */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  overflow-y: auto;
+}
+.popup-content {
+  background: #fffbe6;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 5% auto;
+  padding: 20px;
+  position: relative;
+  animation: popIn 0.4s ease;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  text-align: center;
+}
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.popup img {
+  width: 250px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+}
+.popup h2 {
+  margin-top: 0;
+  color: #623C22;
+}
+.popup p {
+  margin: 6px 0;
+  color: #4e3222;
+  font-size: 1rem;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="w-background-nethra-final-logo-png.jpg" alt="Nethra The Label Logo" class="logo" />
+  <h1>NETHRA THE LABEL</h1>
+  <p class="subtitle">Kids Fashion with Love and Nature</p>
+</header>
+
+<main>
+  <div class="products-grid">
+    <!-- Dress 1 -->
+    <section class="product-section">
+      <img class="dress-photo" 
+           src="https://images.pexels.com/photos/936120/pexels-photo-936120.jpeg"
+           alt="Floral Cotton Frock"
+           data-name="Floral Cotton Frock"
+           data-description="A playful frock perfect for sunny days. Soft fabric ensures all-day comfort while vibrant florals bring joy."
+           data-fabric="100% Organic Cotton"
+           data-color="White base with multicolor flowers"
+           data-buy="https://yourshoplink.com/buy1">
+      <div class="desc"><strong>Floral Cotton Frock</strong></div>
+      <a href="https://yourshoplink.com/buy1" target="_blank" class="buy-btn">Buy Now</a>
+    </section>
+
+    <!-- Dress 2 -->
+    <section class="product-section">
+      <img class="dress-photo" 
+           src="https://images.pexels.com/photos/3662937/pexels-photo-3662937.jpeg"
+           alt="Sunny Yellow Dress"
+           data-name="Sunny Yellow Dress"
+           data-description="Bright and cheerful, like sunshine on a summer day. Breathable cotton makes it ideal for play."
+           data-fabric="Cotton"
+           data-color="Yellow"
+           data-buy="https://yourshoplink.com/buy2">
+      <div class="desc"><strong>Sunny Yellow Dress</strong></div>
+      <a href="https://yourshoplink.com/buy2" target="_blank" class="buy-btn">Buy Now</a>
+    </section>
+
+    <!-- Dress 3 -->
+    <section class="product-section">
+      <img class="dress-photo" 
+           src="https://images.pexels.com/photos/1106468/pexels-photo-1106468.jpeg"
+           alt="Green Leaf Dress"
+           data-name="Green Leaf Dress"
+           data-description="Inspired by nature’s greenery, this comfortable dress is perfect for garden play and outdoor adventures."
+           data-fabric="Linen Blend"
+           data-color="Green"
+           data-buy="https://yourshoplink.com/buy3">
+      <div class="desc"><strong>Green Leaf Dress</strong></div>
+      <a href="https://yourshoplink.com/buy3" target="_blank" class="buy-btn">Buy Now</a>
+    </section>
+  </div>
+</main>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <img id="popupImage" src="" alt="">
+    <h2 id="popupName"></h2>
+    <p id="popupDescription"></p>
+    <p><strong>Fabric:</strong> <span id="popupFabric"></span></p>
+    <p><strong>Color:</strong> <span id="popupColor"></span></p>
+    <a id="popupBuyLink" href="#" target="_blank">
+      <button class="buy-btn">Buy Now</button>
+    </a>
+    <br>
+    <button class="close-btn" id="closePopup">Close</button>
+  </div>
+</div>
+
+<script>
+// Open popup
+document.querySelectorAll('.dress-photo').forEach(img => {
+  img.addEventListener('click', () => {
+    document.getElementById('popupImage').src = img.src;
+    document.getElementById('popupName').textContent = img.dataset.name;
+    document.getElementById('popupDescription').textContent = img.dataset.description;
+    document.getElementById('popupFabric').textContent = img.dataset.fabric;
+    document.getElementById('popupColor').textContent = img.dataset.color;
+    document.getElementById('popupBuyLink').href = img.dataset.buy;
+    document.getElementById('popup').style.display = 'block';
+  });
+});
+// Close popup on button click
+document.getElementById('closePopup').addEventListener('click', () => {
+  document.getElementById('popup').style.display = 'none';
+});
+// Close popup if click outside content
+window.addEventListener('click', e => {
+  if (e.target == document.getElementById('popup')) {
+    document.getElementById('popup').style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
